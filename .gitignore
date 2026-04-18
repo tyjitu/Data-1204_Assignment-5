@@ -1,0 +1,22 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.env
+.DS_Store
+Thumbs.db
+
+# Model artifacts and temporary outputs
+artifacts/
+outputs/
+figures/
+*.log
+*.tmp
+
