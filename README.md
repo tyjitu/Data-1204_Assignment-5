@@ -4,10 +4,10 @@ Binary classification project for predicting whether a company is likely to go b
 
 ## Repository Structure
 
-- `lastname_firstname_assignment5.ipynb` - main notebook submission
+- `Jitu_Tamanna_assignment5.ipynb` - main notebook submission
 - `src/model_utils.py` - reusable helpers for evaluation and feature selection
-- `reports/assignment5_summary.md` - short summary template you can fill in after results are ready
-- `data/` - place `data.csv` here before running the notebook
+- `reports/assignment5_summary.md` - concise results summary
+- `data/data.csv` - workshop training dataset used for modeling
 
 ## Setup
 
@@ -18,15 +18,16 @@ Binary classification project for predicting whether a company is likely to go b
 pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyter
 ```
 
-3. Download the workshop dataset and save it as `data/data.csv`.
-4. Open `lastname_firstname_assignment5.ipynb` and run it from top to bottom.
+3. Place the workshop dataset at `data/data.csv`.
+4. Open `Jitu_Tamanna_assignment5.ipynb` and run it from top to bottom.
 
 ## Workflow
 
 - Use a stratified `70/15/15` train/validation/test split with random seed `42`.
 - Keep the test set untouched until the final evaluation section.
 - Compare exactly 5 experiments using the same evaluation function.
-- Select the winning model using validation `F2-score`, then check overfitting and simplicity.
+- Select the winning model using validation `PR-AUC`, validation `Brier score`, and overfitting evidence.
+- Choose the final threshold only after the winning model is selected, using validation data only.
 
 ## Deliverables
 
@@ -34,4 +35,3 @@ pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyter
 - Notebook
 - Short summary
 - 10-minute walkthrough video
-
