@@ -26,6 +26,7 @@
 - `PR-AUC` is the main discrimination metric because it pays attention to performance on the minority class instead of being dominated by the many negative cases.
 - `Brier score` is the main calibration metric because it checks whether predicted probabilities are close to the observed outcomes, with lower values being better.
 - Thresholded metrics like precision, recall, and `F2-score` are still useful for describing one operating point, but they do not fully describe ranking quality or probability calibration.
+- A default threshold of `0.50` was used during the baseline experiment stage because it is the standard starting point for binary classification before any threshold tuning is done on the validation set.
 
 ## Feature Sets
 
@@ -39,7 +40,7 @@
 
 | exp_id | model | feature_set | main_settings | train_pr_auc | val_pr_auc | overfit_gap | val_roc_auc | val_brier | threshold | val_precision | val_recall | val_f1_or_f2 | selected_finalist | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Logistic Regression | A | median impute + scale + default logistic regression | 0.5308 | 0.2587 | 0.2721 | 0.8766 | 0.0316 | 0.50 | 0.3333 | 0.1818 | 0.2000 | No | Simple baseline |
+| 1 | Logistic Regression | A | median impute + scale + default logistic regression | 0.5308 | 0.2587 | 0.2721 | 0.8766 | 0.0316 | 0.50 | 0.3333 | 0.1818 | 0.2000 | No | Simple baseline using the default `0.50` threshold before tuning |
 | 2 | XGBoost Baseline | A | n_estimators=300, learning_rate=0.05, max_depth=4 | 1.0000 | 0.5525 | 0.4475 | 0.9645 | 0.0207 | 0.50 | 0.7692 | 0.3030 | 0.3448 | No | First serious model |
 | 3 | XGBoost Imbalance-Aware | A | scale_pos_weight=29.99 | 1.0000 | 0.5377 | 0.4623 | 0.9620 | 0.0242 | 0.50 | 0.5263 | 0.6061 | 0.5882 | No | Better recall, weaker calibration |
 | 4 | XGBoost Tuned | A | n_estimators=500, learning_rate=0.03, max_depth=3, subsample=0.8, colsample_bytree=0.8, reg_lambda=2.0 | 0.9973 | 0.5831 | 0.4142 | 0.9665 | 0.0199 | 0.50 | 0.6667 | 0.3030 | 0.3401 | Yes | Best validation PR-AUC and Brier |
