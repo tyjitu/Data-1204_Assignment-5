@@ -31,10 +31,11 @@
 ## Feature Sets
 
 - Feature Set A: all numeric predictors after basic cleaning
-- Feature Set B: reduced set built from XGBoost feature importance on the training split only
-- Selection method for B: kept the top `25` importance-ranked features from a training-only selector model
-- Number of features kept: `25` out of `95` usable predictors
-- Tradeoff: Feature Set B was easier to explain, but it lost noticeable validation `PR-AUC` compared with the stronger all-feature XGBoost runs
+- Feature Set B was selected by fitting an XGBoost feature-importance model on the training split only and ranking predictors by importance.
+- I kept the top `25` features, which fits the assignment guideline of using about `20` to `30` predictors.
+- Performance got worse with Feature Set B: its validation `PR-AUC` was lower than the stronger all-feature XGBoost models.
+- The smaller feature set was easier to explain because it reduced the model to a shorter list of influential variables.
+- I kept Feature Set B as a comparison model, but I did not choose it as the final model because it gave up too much predictive performance.
 
 ## Experiment Results
 
