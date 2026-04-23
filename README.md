@@ -4,10 +4,25 @@ Binary classification project for predicting whether a company is likely to go b
 
 ## Repository Structure
 
-- `Jitu_Tamanna_assignment5.ipynb` - main notebook submission
-- `src/model_utils.py` - reusable helpers for evaluation and feature selection
-- `reports/assignment5_summary.md` - concise results summary
-- `data/data.csv` - workshop training dataset used for modeling
+```text
+Data-1204_Assignment-5/
+├── Jitu_Tamanna_assignment5.ipynb
+├── README.md
+├── reports/
+│   └── assignment5_summary.md
+├── src/
+│   └── model_utils.py
+├── data/
+│   ├── data.csv
+│   └── README.md
+├── pyproject.toml
+├── uv.lock
+├── main.py
+├── .gitignore
+├── .python-version
+├── .venv/
+└── venv/
+```
 
 ## Setup
 
@@ -28,10 +43,3 @@ pip install pandas numpy scikit-learn xgboost matplotlib seaborn jupyter
 - Compare exactly 5 experiments using the same evaluation function.
 - Select the winning model using validation `PR-AUC`, validation `Brier score`, and overfitting evidence.
 - Choose the final threshold only after the winning model is selected, using validation data only.
-
-## Deliverables
-
-- GitHub repository link
-- Notebook
-- Short summary
-- 10-minute walkthrough video
