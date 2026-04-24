@@ -54,6 +54,7 @@
 - Tie-break support: best validation `Brier score` at `0.0199` among the top models
 - Extra support: strong validation `ROC-AUC` at `0.9665`
 - Simpler alternative check: the selected-features model was easier to explain but not close enough in validation `PR-AUC`
+- Tuning scope: this model came from a small manual search over a few XGBoost settings using the training and validation workflow only, with no tuning on the test set
 - Validation threshold: `0.15`, chosen on the validation set to maximize `F2-score`
 - Final settings: `n_estimators=500`, `learning_rate=0.03`, `max_depth=3`, `subsample=0.8`, `colsample_bytree=0.8`, `reg_lambda=2.0`
 
